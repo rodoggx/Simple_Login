@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivityTAG_";
     private EditText User;
+    private EditText Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public void login(View view) {
         User = (EditText) findViewById(R.id.inputUser);
+        Password = (EditText) findViewById(R.id.inputPW);
 
-        Log.d(TAG, "Login: " + User.getText());
+        Log.d(TAG, "User: " + User.getText() + " " + "Password: " + User.getText());
 
         if (true) {
             Intent intent = new Intent(this, LoginActivity.class);
             intent.putExtra("mainUser", User.getText().toString());
+            intent.putExtra("mainPW", Password.getText().toString());
             startActivity(intent);
         }
     }

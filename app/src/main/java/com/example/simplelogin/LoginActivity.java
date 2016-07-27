@@ -12,6 +12,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivityTAG_";
     private TextView loginUser;
+    private TextView MainPW;
     private EditText loginEmail;
     private EditText loginPW;
 
@@ -24,6 +25,9 @@ public class LoginActivity extends AppCompatActivity {
         loginUser = (TextView) findViewById(R.id.loginUser);
         String userName = getIntent().getStringExtra("mainUser");
         loginUser.setText(userName);
+
+        MainPW = (TextView) findViewById(R.id.loginPW);
+        String userPW = getIntent().getStringExtra("mainPW");
     }
 
     public void signup(View view) {
